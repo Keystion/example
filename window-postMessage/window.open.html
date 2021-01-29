@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <style type="text/css">
+        input{
+            border: 1px solid #000;
+            padding: 1em;
+            font-size: 2em;
+        }
+    </style>
+    <script type="text/javascript">
+    window.open("./popup.html", "mywindow", "width=350,height=250");
+    // window.open("https://programming.gaoxiaobang.com/popup.html", "mywindow", "width=350,height=250");
+    // Create IE + others compatible event handler
+    var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+    var eventer = window[eventMethod];
+    var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+    // Listen to message from child window
+    eventer(messageEvent, function(e) {
+        console.log('origin: ', e.origin)
+
+        document.getElementById('number').value = 'num：' + e.data;
+        // Check if origin is proper
+        if (e.origin != 'http://127.0.0.1:8081') {
+            return
+        }
+        console.log('parent received message!: ', e.data);
+    }, false);
+    </script>
+</head>
+
+<body>
+
+    <ul>
+        <li><a href="index.html">iframe</a></li>
+        <li><a href="window.open.html">iframe</a></li>
+    </ul>
+    <hr>
+<input type="text" name="number" id="number">
+</body>
+
+</html>

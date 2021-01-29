@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Popup</title>
+    <style type="text/css">
+        html, body{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+        #box{
+            height: 100%;
+            width: 100%;
+            background-color:rgb(204, 102, 0);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    点击它 ⤵️
+    <div id="box" onclick="changeColor();" title="Touch me, Baby!"></div>
+    
+    <script type="text/javascript">
+    var box = document.getElementById('box');
+    var num = 0;
+
+    function changeColor () {            
+        num++;
+
+        window.opener.postMessage(num, '*');
+        box.innerHTML = "点击："+ num + "次";
+    }
+    </script>
+</body>
+
+</html>
