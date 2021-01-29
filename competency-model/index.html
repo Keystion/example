@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T族能力模型</title>
+    <style>
+        @font-face {
+            font-family: "SourceHanSerifCN-Bold";
+            src: url(https://rescdn.qqmail.com/weread/assets/mini_program/SourceHanSerifCN-Bold.ttf) format("truetype");
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap
+        }
+        body{
+            font-size: 12px;
+            font-family: PingFang SC,-apple-system,SF UI Text,Lucida Grande,STheiti,Microsoft YaHei,sans-serif;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        table td{
+            padding: 4px;
+            color: #dcdcdc;
+        }
+        table th{
+            font-family: "SourceHanSerifCN-Bold";
+        }
+        table tr:hover td{
+            color: #000;
+        }
+
+        /* .core, */
+        .core td:nth-of-type(1),
+        .core td:nth-of-type(2){
+            background-color: #92d04f;
+            /* color: #000; */
+        }
+
+        input[value="p0"]:checked ~ table .p0,
+        input[value="p0"]:hover ~ table .p0,
+        input[value="p1"]:checked ~ table .p1,
+        input[value="p1"]:hover ~ table .p1,
+        input[value="p2"]:checked ~ table .p2,
+        input[value="p2"]:hover ~ table .p2,
+        input[value="p3"]:checked ~ table .p3,
+        input[value="p3"]:hover ~ table .p3,
+        input[value="p4"]:checked ~ table .p4,
+        input[value="p4"]:hover ~ table .p4,
+        input[value="p5"]:checked ~ table .p5,
+        input[value="p5"]:hover ~ table .p5,
+        input[value="p6"]:checked ~ table .p6,
+        input[value="p6"]:hover ~ table .p6,
+        input[value="p7"]:checked ~ table .p7,
+        input[value="p7"]:hover ~ table .p7,
+        input[value="p8"]:checked ~ table .p8,
+        input[value="p8"]:hover ~ table .p8,
+        input[value="p9"]:checked ~ table .p9,
+        input[value="p9"]:hover ~ table .p9{
+            outline: auto #00f;
+            color: #000;
+        }
+    </style>
+    <script>
+        function select(p) {
+            console.log(p)
+        }
+    </script>
+</head>
+
+<body>
+    【P0<input class="view" type="radio" name="grade" value="p0" />】；
+    【P1<input class="view" type="radio" name="grade" value="p1" />】；
+    【P2<input class="view" type="radio" name="grade" value="p2" />】；
+    【P3<input class="view" type="radio" name="grade" value="p3" />】；
+    【P4<input class="view" type="radio" name="grade" value="p4" />】；
+    【P5<input class="view" type="radio" name="grade" value="p5" />】；
+    【P6<input class="view" type="radio" name="grade" value="p6" />】；
+    【P7<input class="view" type="radio" name="grade" value="p7" />】；
+    【P8<input class="view" type="radio" name="grade" value="p8" />】；
+    【P9<input class="view" type="radio" name="grade" value="p9" />】；
+    <table border="1" cellpadding="0" cellspacing="0">
+        <thead>
+            <tr>
+                <th rowspan="2" dir="LTR" width="30">序列</th>
+                <th dir="LTR" width="70">能力项</th>
+                <th dir="LTR">综合定义</th>
+                <th dir="LTR">L1</th>
+                <th dir="LTR">L2</th>
+                <th dir="LTR">L3</th>
+                <th dir="LTR">L4</th>
+                <th dir="LTR">L5</th>
+            </tr>
+            <tr>
+                <th dir="LTR">能力项名称</th>
+                <th dir="LTR">通用能力项定义</th>
+                <th dir="LTR">了解</th>
+                <th dir="LTR">熟悉</th>
+                <th dir="LTR">掌握</th>
+                <th dir="LTR">精通</th>
+                <th dir="LTR">专业权威</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td dir="LTR" style="color: #000;">1</td>
+                <td style="color: #000;">业务理解</td>
+                <td l="l0" class="p0" dir="LTR">理解公司战略、经营环境、教育行业特点等，并主动将自己的日常工作与公司的远景，目标和经营联结在一起。</td>
+                <td l="l1" class="" dir="LTR">基本的经营知识：总体了解公司为客户提供的服务和产品；了解公司架构和经营原则。<br>
+                    <br>
+                    了解教育行业常见的专业术语，理解MOOC系统的构成和专业术语。</td>
+                <td l="l2" class="p1 p2 p3" dir="LTR">专门的经营知识：深层地了解公司某一经营单位的业务；理解公司各业务部门之间的相互依赖关系；理解公司所在行业的状况。<br>
+                    <br>
+                    了解慧科云的产品类型、产品目标用户、产品的价值。理解产品背后的业务知识。</td>
+                <td l="l3" class="p4 p5" dir="LTR">高级经营知识：深层地了解公司综合性的业务单位或客户的业务；理解公相关部门之间的关系；熟知公司的业务。<br>
+                    <br>
+                    了解慧科云的产品的竞争对手，竞品情况及双方解决方案的优势和劣势。</td>
+                <td l="l4" class="p6 p7" dir="LTR">综合经营知识：全面理解公司主要业务单位的业务流程，及公司的总体业务；展示出公司，行业，及客户所面临的问题。<br>
+                    <br>
+                    洞察行业发展趋势及发展阶段，并以此进行产品和技术规划。</td>
+                <td l="l5" class="p8 p9" dir="LTR">计划并行动以支持公司的战略：准备应急性的战略步骤；调整公司架构，制定实现长远目标的行动步骤。</td>
+            </tr>
+            <tr>
+                <td dir="LTR" style="color: #000;">2</td>
+                <td style="color: #000;">专业知识</td>
+                <td l="l0" class="p0" dir="LTR">软件技术工作是一项高度专业化的职业，必须具备系统化的专业知识，在深度和广度上都有较深的积累。<br>
+                    现在是一个知识爆炸的时代，知识更新速度越来越快，行业竞争亦日趋激烈，因此我们要通过感知技术发展趋势，并将新知识有效的应用到具体工作中。</td>
+                <td l="l1" class="p1 p2" dir="LTR">掌握领域内的专业知识体系，能够有效的基于这些知识展开有效的工作。与专业领域内的人可以进行基本的技术交流。<br>
+                    <br>
+                    针对工作中遇到的新知识，可以通过快速而有效的学习，掌握新知识以便指导具体工作。被动型。</td>
+                <td l="l2" class="p3" dir="LTR">能够有侧重点的深度掌握领域的专业知识，并基于这些专业知识可以独立解决特定方向的技术和业务难题。能够对比不同的解决方案并给出不同解决方案的差异，基于现实情况选择合适的技术方案。<br>
+                    <br>
+                    通过主动发现系统现有解决方案的不足，通过积极主动的学习新知识、应用新知识，对现有解决方案不足的地方进行改进。</td>
+                <td l="l3" class="p4 p5 p6" dir="LTR">较为全面的深度掌握领域内的专业知识，能够依据要求提供综合的技术解决方案。能够为技术决策提供咨询建议。能够系统性的解决核心、疑难问题。<br>
+                    <br>
+                    能够理解公司愿景、产品规划依据这些信息提前构建自己的新知识结构，在未来工作中可以有效的应用起来。</td>
+                <td l="l4" class="p7 p8" dir="LTR">深刻掌握领域的专业知识，并对关联的专业知识也有相当地理解。能够为重大的技术选择提供专业的技术咨询支持。能够主导重大系统的技术开发工作。能够引领公司技术发展路线。</td>
+                <td l="l5" class="p9" dir="LTR">跨行业的知识积累，有重要学术观点，行业领军。</td>
+            </tr>
+            <tr class="core">
+                <td dir="LTR" style="color: #000;">3</td>
+                <td style="color: #000;">工程能力</td>
+                <td l="l0" class="" dir="LTR">问题解决：在实际工作中，我们会碰到各种各样的疑难问题，需要我们具备准确定位问题、收集问题信息、设计解决方案、验证方案的有效性的能力。<br>
+                    工程能力：采用合适的技术手段，让我们以更经济、更有效、更规范的方式进行软件开发。<br>
+                    数据驱动：数据是21世纪重要的资源，我们需要掌握通过度量数据来设计、更新我们的系统，亦通过度量数据来验证我们的工作成果和改进工作方式方法。</td>
+                <td l="l1" class="p0 p1" dir="LTR">掌握通过日志分析、工具检测等不同手段分析、定位、处理、验证来有效解决一般常见的问题。<br>
+                    <br>
+
+                    能够书写模块级别的开发文档（包括需求分析文档，总体设计文档，详细设计文档等）。了解基本的开发流程（设计，开发，测试，上线，验证，回滚等），并应用在项目开发中。知道并实践项目review流程，如code
+                    review等。<br>
+                    <br>
+                    理解数据的含义并通过工具对数据进行分析得出对数据的定性认识。掌握数据分析的一般方法。能够熟练使用Excel或其他数据处理工具。</td>
+                <td l="l2" class="p2 p3" dir="LTR">掌握通过日志分析、工具检测等不同手段分析、定位、处理、验证来有效解决系统复杂性的问题。<br>
+                    <br>
+
+                    能够书写系统级别的开发文档（包括需求分析文档，总体设计文档，详细设计文档等），能够指导低级别工程师完成开发文档的书写和review。能够搭建或者指导搭建或者选型采购持续集成系统，并利用该系统提高产品质量，加快迭代速度。<br>
+                    <br>
+                    能够对数据进行分析并得出对数据的定量认识。通过挖掘数据进而对我们的工作成果进行衡量。</td>
+                <td l="l3" class="p4 p5" dir="LTR">有丰富的问题跟进经验, 融合架构知识,
+                    能做复杂系统的问题分析；能够在系统设计时考虑问题分析的需求。深入理解对应领域的问题追查需求，设计并开发自动化的问题分析工具。<br>
+                    <br>
+
+                    非常熟练使用开发工具和文档，对团队进行指导，提高开发效率和项目质量。拥抱新工具，新系统的引入并很快的掌握。精通项目开发流程，并指导过大型项目的开发过程，把控项目的关键点。熟悉使用项目管理和协作工具，能够在大型项目的开发中，高效协同跨团队的合作。能利用持续集成系统把开发流程中一些实践固化成固定流程，可以有效降低开发过程中的沟通成本。</td>
+                <td l="l4" class="p6 p7" dir="LTR">精通软件工程方法论。能对现有工作方法，所用系统和工具在流程、使用方法等层面提出建设性意见。能总结自己在所用系统、工具软件的日常工作心得并分享推广。能提炼总结问题、制定规范并推广。<br>
+                    <br>
+                    基于数据定性和定量的认识，指导我们工作。基于数据分析改进我们的产品设计。</td>
+                <td l="l5" class="p8 p9" dir="LTR">软件工程方法的理论开拓人。</td>
+            </tr>
+            <tr class="core">
+                <td style="color: #000;">4</td>
+                <td style="color: #000;">技术能力</td>
+                <td l="l0" class="p0">
+                    掌握不同领域开发相关的核心知识，开发工具、开发框架、开发流程，并基于这些能力构建服务端系统。（对于Java、Web、App、运维、测试、Unity、三位模型等不同的技术能力有补充定义）</td>
+                <td l="l1" class="p1">
+                    掌握一门主流的开发语言，了解常用的测试工具使用及扎实的CS基础；<br>
+                    了解简单Shell/Perl/SQL等脚本编程；<br>
+                    能够在有经验同事指导下完成一般模块的代码开发工作，能够书写代码相关的文档。</td>
+                <td l="l2" class="p2 p3">
+                    熟练掌握1~2门主流开发语言，具备良好的编码风格和代码注释；<br>
+                    掌握其它一门脚本编程，比如Perl，Python等；熟练掌握常用的测试、诊断调优工具；<br>
+                    能够独立负责复杂模块的研发工作，规划模块的项目开发优先级；能够推动项目按时完成交付。<br>
+                </td>
+                <td l="l3" class="p4 p5">
+                    精通1~2门主流开发语言，具备良好的编码风格和代码注释；<br>
+                    主导或深入参与过一个成功的中型项目研发工作，或者在一个大型项目中成功研发其中的核心子项目，担任其中研发负责人；<br>
+                    能够协同团队完成简单系统的研发工作，包括需求调研，设计，开发，文档，测试，上线等；<br>
+                    能够协调系统各模块的研发进度，推动系统的按时交付。<br>
+                </td>
+                <td l="l4" class="p6 p7">
+                    具备良好的业界技术视野；担任过一个成功的大型项目的技术负责人。<br>
+                    有完整的从立项到上线的项目经验；能够带领团队完成复杂系统的研发工作，包括需求调研，设计，开发，文档，测试，上线等；能够主导项目的进度和交付。<br>
+                </td>
+                <td l="l5" class="p8 p9">对开源社区有充分的贡献，有重大的技术创新和突破，在行业里有较强的影响力。</td>
+            </tr>
+            <tr>
+                <td style="color: #000;">5</td>
+                <td style="color: #000;">项目管理</td>
+                <td l="l0" class="p0">我们所有的工作都是有时间和成本限制的，因此需要我们通过有效的项目管理让我们能够在可控的时间和成本内完成项目目标。</td>
+                <td l="l1" class="p1 p2">能够有效的管理自己的工作进度，以便让自己负责的工作按时、保质、保量的完成。</td>
+                <td l="l2" class="p3 p4">能够管理一个多人、多部门协同的项目。通过任务分解、进度管理、风险管理等按任务要求达成任务目标。做好项目汇报工作。</td>
+                <td l="l3" class="p5 p6">能够同时有序地管理多个项目。</td>
+                <td l="l4" class="p7 p8">能够对研发流程进行不断的优化，并形成制度，对开发管理、测试管理、运维管理的流程有核心的贡献。</td>
+                <td l="l5" class="p9">　</td>
+            </tr>
+            <tr>
+                <td style="color: #000;">6</td>
+                <td style="color: #000;">影响力</td>
+                <td l="l0" class="p0">我们通过实践得来的经验，最高的价值就是使我们的经验和方法论可以被复制和传承，能够充分的表达自己的观点，让产品经理、设计师充分的得到反馈。</td>
+                <td l="l1" class="">能够把自己掌握的经验通过WIKI工具清晰、准确的记录下来，做为以后工作的一个参考。</td>
+                <td l="l2" class="p1 p2">能够对积累的经验通过分享会的形式准确的传递给其他人。</td>
+                <td l="l3" class="p3 p4">为团队系统成体系的赋能并为团队在工作中带来明显的收益（如工作效率、工作质量、工作体验等），在技术会议上进行演讲。</td>
+                <td l="l4" class="p5 p6">为公司赋能后，将促进公司业务升级、拓展。技术创新，技术驱动产品研发。</td>
+                <td l="l5" class="p7 p8 p9">制定行业的技术标准。</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
