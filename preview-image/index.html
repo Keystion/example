@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>preview-image</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+        }
+    
+        .box {
+            overflow: hidden;
+            height: 100vh;
+            overflow-y: auto;
+        }
+    
+        .box .item {
+            float: left;
+            width: 30vw;
+            height: 30vw;
+            box-sizing: border-box;
+            padding: 1vw;
+            box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.3);
+        }
+    
+        .box .item img {
+            width: 100%;
+            height: 80%;
+            z-index: -1;
+            transition: all 0.3s;
+        }
+    
+        .box .item:hover img {
+            transform: scale(0.98);
+        }
+    
+        .box .item:hover p {
+            color: rgb(252, 0, 0);
+        }
+    
+        .box .item p {
+            height: 20%;
+            margin: 0;
+            padding: 0.8em;
+            overflow-y: auto;
+            text-align: center;
+        }
+    
+        .dialog {
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: fixed;
+            border: 1px solid #000;
+            background-color: #dcdcdc;
+            display: none;
+        }
+    
+        .dialog-hd {
+            height: 32px;
+            width: 100%;
+            border-bottom: 1px solid #000;
+            line-height: 32px;
+            text-indent: 0.8em;
+        }
+    
+        .dialog-hd i {
+            color: rgba(0, 0, 0, 0.3);
+        }
+    
+        .dialog-hd a {
+            float: right;
+            line-height: 32px;
+            padding: 0 1em;
+            background-color: #ccc;
+        }
+    
+        .dialog-bd {
+            width: 100%;
+            height: calc(100% - 32px + 1px);
+            overflow-y: auto;
+            background-color: #fff;
+            text-align: center;
+        }
+    
+        .dialog-bd img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="item" title="点击查看大图">
+            <img class="img" src="http://placehold.it/2050x4450" alt="">
+            <p class="p">标题1</p>
+        </div>
+        <div class="item a">
+            <img class="img" src="http://placehold.it/350x150" alt="">
+            <p class="p">标题2</p>
+        </div>
+        <div class="item">
+            <img class="img" src="http://placehold.it/350x150" alt="">
+            <p class="p">标题3</p>
+        </div>
+        <div class="item">
+            <img class="img" src="http://placehold.it/350x150" alt="">
+            <p class="p">标题4</p>
+        </div>
+        <div class="item">
+            <img class="img" src="http://placehold.it/350x150" alt="">
+            <p class="p">标题5</p>
+        </div>
+        <div class="item">
+            <img class="img" src="http://placehold.it/350x150" alt="">
+            <p class="p">标题6</p>
+        </div>
+        <div class="item">
+            <img class="img" src="http://placehold.it/350x150" alt="">
+            <p class="p">标题7</p>
+        </div>
+        <div class="item">
+            <img class="img" src="http://placehold.it/350x150" alt="">
+            <p class="p">标题8</p>
+        </div>
+        <div class="item">
+            <img class="img" src="http://placehold.it/350x150" alt="">
+            <p class="p">标题9</p>
+        </div>
+        <div class="item">
+            <img class="img" src="http://placehold.it/350x150" alt="">
+            <p class="p">标题10</p>
+        </div>
+        <div class="item">
+            <img class="img" src="http://placehold.it/350x150" alt="">
+            <p class="p">标题11</p>
+        </div>
+    </div>
+    
+    <div class="dialog" onclick="hideDialog()" title="点击关闭">
+        <div class="dialog-hd"><span class="dialog-title"></span><i>（点击任何地方关闭）</i><a href="javascript:void(0)">x</a></div>
+        <div class="dialog-bd"><img class="img" src="" alt=""></div>
+    </div>
+    <script>
+        document.querySelectorAll('.item').forEach(function (el) {
+            el.addEventListener('click', function (e) {
+                e.stopPropagation()
+                if (e.target.classList) {
+                    if (e.target.classList.value.indexOf('item') !== -1) {
+                        showDialog(e.target)
+                    } else if (
+                        e.target.classList.value.indexOf('img') !== -1 ||
+                        e.target.classList.value.indexOf('p') !== -1
+                    ) {
+                        showDialog(e.target.parentElement)
+                    }
+                }
+            }, false)
+        })
+        function hideDialog() {
+            document.querySelector('.dialog').style.display = 'none';
+            document.querySelector('.dialog img').setAttribute('src', '')
+        }
+        function showDialog(e) {
+            document.querySelector('.dialog').style.display = 'block';
+            document.querySelector('.dialog img').setAttribute('src', e.querySelector('img').src)
+            document.querySelector('.dialog .dialog-title').innerHTML = e.querySelector('p').innerText
+        }
+    </script>
+</body>
+</html>
